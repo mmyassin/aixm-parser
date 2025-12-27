@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+
+    <!-- NuGet Package Metadata -->
+    <PackageId>AixmParser.GeoJson</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Mahmoud</Authors>
+    <Company>AixmParser</Company>
+    <Description>GeoJSON export extension for AixmParser.Core. Provides convenient methods to export AIXM parsed data to GeoJSON format for use with mapping libraries and GIS tools.</Description>
+    <PackageTags>AIXM;Aviation;GIS;GeoJSON;Aeronautical;AIP;Export;Spatial;Mapping</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/mmyassin/aixm-parser</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/mmyassin/aixm-parser</PackageProjectUrl>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NetTopologySuite.IO.GeoJSON" Version="4.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AixmParser.Core\AixmParser.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
