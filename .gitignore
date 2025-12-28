@@ -38,6 +38,7 @@ nupkg/
 
 # Build outputs
 output/
+aixm_sample_files/
 
 # Test Results
 [Tt]est[Rr]esult*/

@@ -8,8 +8,8 @@
 
     <!-- NuGet Package Metadata -->
     <PackageId>AixmParser.Core</PackageId>
-    <Version>1.0.0</Version>
-    <Authors>Mahmoud</Authors>
+    <Version>1.0.1</Version>
+    <Authors>Mahmoud M. Yassin</Authors>
     <Company>AixmParser</Company>
     <Description>A robust .NET library for parsing Aeronautical Information Exchange Model (AIXM) 5.1 and 5.1.1 XML data. Returns NetTopologySuite geometries for spatial data processing. Supports parsing airspaces, routes, navaids, designated points, and airports.</Description>
     <PackageTags>AIXM;Aviation;GIS;Aeronautical;AIP;XML;Parser;NetTopologySuite;Spatial</PackageTags>

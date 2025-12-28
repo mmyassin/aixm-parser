@@ -101,8 +101,9 @@ internal static class NavaidParser
         if (pointGeometry == null) return null;
 
         // Extract latitude and longitude from geometry
-        double? lat = pointGeometry.Y;
+        // NTS Point stores coordinates as X=Longitude, Y=Latitude
         double? lon = pointGeometry.X;
+        double? lat = pointGeometry.Y;
 
         return new Navaid
         {

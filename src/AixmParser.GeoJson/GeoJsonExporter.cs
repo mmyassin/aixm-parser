@@ -195,7 +195,14 @@ public static class GeoJsonExporter
     /// </summary>
     private static string SerializeFeatureCollection(FeatureCollection collection, Formatting formatting)
     {
-        var serializer = GeoJsonSerializer.Create();
+        // Configure serializer for RFC 7946 GeoJSON (Lon, Lat order)
+        var serializer = GeoJsonSerializer.Create(new JsonSerializerSettings
+        {
+            Formatting = formatting,
+            NullValueHandling = NullValueHandling.Ignore
+        }, new NetTopologySuite.Geometries.GeometryFactory(),
+        3); // 3 = XY coordinate sequence (Lon, Lat)
+
         using var stringWriter = new StringWriter();
         using var jsonWriter = new JsonTextWriter(stringWriter)
         {

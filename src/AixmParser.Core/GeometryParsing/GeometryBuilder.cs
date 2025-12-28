@@ -38,6 +38,9 @@ internal static class GeometryBuilder
         var geodesicString = curve.Descendants().FirstOrDefault(e => e.Name.LocalName == "GeodesicString");
         if (geodesicString == null) return null;
 
+        // Extract srsName from curve element for proper coordinate ordering
+        var srsName = curve.Attribute("srsName")?.Value;
+
         // Try posList first (single element with all coordinates)
         var posList = geodesicString.Element(Namespaces.Gml + "posList")
                       ?? geodesicString.Elements().FirstOrDefault(e => e.Name.LocalName == "posList");
@@ -46,7 +49,7 @@ internal static class GeometryBuilder
 
         if (posList != null)
         {
-            coordinates = CoordinateParser.ParsePosList(posList).ToArray();
+            coordinates = CoordinateParser.ParsePosList(posList, srsName).ToArray();
         }
         else
         {
@@ -57,7 +60,7 @@ internal static class GeometryBuilder
             var coordList = new List<Coordinate>();
             foreach (var posEl in posElements)
             {
-                var coord = CoordinateParser.ParsePosCoordinate(posEl);
+                var coord = CoordinateParser.ParsePosCoordinate(posEl, srsName);
                 if (coord != null)
                     coordList.Add(coord);
             }

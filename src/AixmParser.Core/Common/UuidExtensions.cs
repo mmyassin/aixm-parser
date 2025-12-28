@@ -15,8 +15,15 @@ internal static class UuidExtensions
         if (string.IsNullOrEmpty(uuid))
             return uuid;
 
+        // Remove leading # (used in xlink:href references)
+        if (uuid.StartsWith("#"))
+            uuid = uuid.Substring(1);
+
         // Remove common prefixes
         if (uuid.StartsWith("urn:uuid:", StringComparison.OrdinalIgnoreCase))
+            return uuid.Substring(9);
+
+        if (uuid.StartsWith("urn.uuid.", StringComparison.OrdinalIgnoreCase))
             return uuid.Substring(9);
 
         if (uuid.StartsWith("uuid.", StringComparison.OrdinalIgnoreCase))

@@ -28,8 +28,11 @@ internal static class PointParser
 
         if (pos == null) return null;
 
+        // Extract srsName from point element for proper coordinate ordering
+        var srsName = pointElement.Attribute("srsName")?.Value;
+
         // Parse coordinate with proper ordering detection
-        var coord = CoordinateParser.ParsePosCoordinate(pos);
+        var coord = CoordinateParser.ParsePosCoordinate(pos, srsName);
         if (coord == null) return null;
 
         // Check if there's elevation (Z coordinate)

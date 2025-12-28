@@ -5,8 +5,8 @@ Console.WriteLine("AIXM Parser - Sample Application");
 Console.WriteLine("=================================\n");
 
 // Path to the Oman AIXM file from the old project
-string aixmFilePath = @"path_to_aixm_file.xml";
-string outputDirectory = @"path_output\geojson";
+string aixmFilePath = @"path/to/aixm-file.xml";
+string outputDirectory = @"path/to/output/directory";
 
 if (!File.Exists(aixmFilePath))
 {
@@ -75,7 +75,10 @@ try
         Console.WriteLine($"  Designator: {firstNavaid.Designator}");
         Console.WriteLine($"  Type:       {firstNavaid.Type}");
         Console.WriteLine($"  Name:       {firstNavaid.Name}");
-        Console.WriteLine($"  Position:   {firstNavaid.Latitude:F4}, {firstNavaid.Longitude:F4}");
+        Console.WriteLine($"  Latitude:   {firstNavaid.Latitude:F4}");
+        Console.WriteLine($"  Longitude:  {firstNavaid.Longitude:F4}");
+        Console.WriteLine($"  Geometry.X: {firstNavaid.Geometry?.X:F4}");
+        Console.WriteLine($"  Geometry.Y: {firstNavaid.Geometry?.Y:F4}");
         if (firstNavaid.Frequency.HasValue)
             Console.WriteLine($"  Frequency:  {firstNavaid.Frequency} {firstNavaid.FrequencyUom}");
     }

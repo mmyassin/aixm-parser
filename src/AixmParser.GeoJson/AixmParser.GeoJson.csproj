@@ -8,8 +8,8 @@
 
     <!-- NuGet Package Metadata -->
     <PackageId>AixmParser.GeoJson</PackageId>
-    <Version>1.0.0</Version>
-    <Authors>Mahmoud</Authors>
+    <Version>1.0.1/Version>
+    <Authors>Mahmoud M. Yassin</Authors>
     <Company>AixmParser</Company>
     <Description>GeoJSON export extension for AixmParser.Core. Provides convenient methods to export AIXM parsed data to GeoJSON format for use with mapping libraries and GIS tools.</Description>
     <PackageTags>AIXM;Aviation;GIS;GeoJSON;Aeronautical;AIP;Export;Spatial;Mapping</PackageTags>
