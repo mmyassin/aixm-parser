@@ -1,6 +1,7 @@
 # AixmParser
 
 A robust .NET library suite for parsing Aeronautical Information Exchange Model (AIXM) 5.1 and 5.1.1 XML data. Parse AIXM files and export to NetTopologySuite geometries or GeoJSON format.
+<img width="734" height="540" alt="Screenshot 2025-12-28 152536" src="https://github.com/user-attachments/assets/6854e412-f234-4a3e-9a65-a6405b1214a0" />
 
 ## Packages
 
